@@ -1,0 +1,137 @@
+[
+  {
+    "id": "1",
+    "name": "Iron Man Funko Pop",
+    "description": "This is the description for product 1.",
+    "stock": 20,
+    "category": "Marvel",
+    "img": "product1.jpg",
+    "price": 4260.75
+  },
+  {
+    "id": "2",
+    "name": "Jon Snow Funko Pop",
+    "description": "Description for product 2 goes here.",
+    "stock": 15,
+    "category": "GoT",
+    "img": "product2.jpg",
+    "price": 5498.25
+  },
+  {
+    "id": "3",
+    "name": "Spider-Man Funko Pop",
+    "description": "Description for product 3.",
+    "stock": 8,
+    "category": "Marvel",
+    "img": "product3.jpg",
+    "price": 4175.0
+  },
+  {
+    "id": "4",
+    "name": "Captain America Funko Pop",
+    "description": "Description for product 4.",
+    "stock": 30,
+    "category": "Marvel",
+    "img": "product4.jpg",
+    "price": 5840.15
+  },
+  {
+    "id": "5",
+    "name": "Daenerys Targaryen Funko Pop",
+    "description": "Description for product 5 goes here.",
+    "stock": 10,
+    "category": "GoT",
+    "img": "product5.jpg",
+    "price": 3876.8
+  },
+  {
+    "id": "6",
+    "name": "Superman Funko Pop",
+    "description": "Description for product 6.",
+    "stock": 5,
+    "category": "DC",
+    "img": "product6.jpg",
+    "price": 4865.5
+  },
+  {
+    "id": "7",
+    "name": "Hulk Funko Pop",
+    "description": "Description for product 7.",
+    "stock": 25,
+    "category": "Marvel",
+    "img": "product7.jpg",
+    "price": 5763.9
+  },
+  {
+    "id": "8",
+    "name": "Arya Stark Funko Pop",
+    "description": "Description for product 8 goes here.",
+    "stock": 18,
+    "category": "GoT",
+    "img": "product8.jpg",
+    "price": 3967.25
+  },
+  {
+    "id": "9",
+    "name": "Shazam Funko Pop",
+    "description": "Description for product 9.",
+    "stock": 12,
+    "category": "DC",
+    "img": "product9.jpg",
+    "price": 5089.6
+  },
+  {
+    "id": "10",
+    "name": "Tyrion Lannister Funko Pop",
+    "description": "Description for product 10.",
+    "stock": 22,
+    "category": "GoT",
+    "img": "product10.jpg",
+    "price": 4485.2
+  },
+  {
+    "id": "11",
+    "name": "Batman Funko Pop",
+    "description": "Description for product 11 goes here.",
+    "stock": 7,
+    "category": "DC",
+    "img": "product11.jpg",
+    "price": 3836.35
+  },
+  {
+    "id": "12",
+    "name": "Flash Funko Pop",
+    "description": "Description for product 12.",
+    "stock": 3,
+    "category": "DC",
+    "img": "product12.jpg",
+    "price": 5921.0
+  },
+  {
+    "id": "13",
+    "name": "Wolverine Funko Pop",
+    "description": "Description for product 13.",
+    "stock": 14,
+    "category": "Marvel",
+    "img": "product13.jpg",
+    "price": 4650.9
+  },
+  {
+    "id": "14",
+    "name": "Cersei Lannister Funko Pop",
+    "description": "Description for product 14 goes here.",
+    "stock": 9,
+    "category": "GoT",
+    "img": "product14.jpg",
+    "price": 3998.75
+  },
+  {
+    "id": "15",
+    "name": "Wonder Woman Funko Pop",
+    "description": "Description for product 15.",
+    "stock": 20,
+    "category": "DC",
+    "img": "product15.jpg",
+    "price": 5712.25
+  }
+]
