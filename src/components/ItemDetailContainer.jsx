@@ -26,13 +26,7 @@ export const ItemDetailContainer = (props) => {
   return (
     <Container className="mt-4">
       <h1>Detalles del Producto</h1>
-
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
-        <h1>{item.name}</h1>
-        <img src={item.img} />
-        <div>{item.stock}</div>
-      </div>
-      <ItemCount />
+      <ItemDetail item={item} />
     </Container>
   );
 };

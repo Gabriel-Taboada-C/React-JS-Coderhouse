@@ -5,7 +5,7 @@ import data from "../data/items.json";
 import { ItemList } from "./ItemList";
 
 export const ItemListContainer = (props) => {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(null);
 
   const { id } = useParams();
 
@@ -22,10 +22,9 @@ export const ItemListContainer = (props) => {
         setItems(itemsFiltered);
       }
     });
-    console.log(data);
   }, []);
 
-  if (!items) return <div>Cargando...</div>;
+  if (!items) return <div>Cargando productos...</div>;
 
   return (
     <Container className="mt-4">
