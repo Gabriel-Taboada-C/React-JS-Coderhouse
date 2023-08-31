@@ -3,10 +3,10 @@ import { useParams } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import data from "../data/items.json";
 import { ItemDetail } from "./ItemDetail";
-import { ItemList } from "./ItemList";
+import { ItemCount } from "./ItemCount";
 
 export const ItemDetailContainer = (props) => {
-  const [items, setItems] = useState(null);
+  const [item, setItem] = useState(null);
 
   const { id } = useParams();
 
@@ -18,15 +18,23 @@ export const ItemDetailContainer = (props) => {
       }, 2000);
     });
 
-    promise.then((data) => setItems(data));
+    promise.then((data) => setItem(data));
   }, []);
 
-  if (!items) return <div>Cargando...</div>;
+  if (!item) return <div>Cargando...</div>;
 
   return (
     <Container className="mt-4">
-      <h1>{props.greeting}</h1>
-      <ItemDetail items={items} />
+      <h1>Detalles del Producto</h1>
+
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
+        <h1>{item.name}</h1>
+        <img src={item.img} />
+        <div>{item.stock}</div>
+      </div>
+      <ItemCount />
     </Container>
   );
 };
+
+/* No logro que funcione ItemDetail, si lo llamo no me trae ningun valor */

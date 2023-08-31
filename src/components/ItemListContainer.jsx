@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import data from "../data/items.json";
 import { ItemList } from "./ItemList";
-import { ItemCount } from "./ItemCount";
 
 export const ItemListContainer = (props) => {
   const [items, setItems] = useState([]);
@@ -31,10 +30,16 @@ export const ItemListContainer = (props) => {
   return (
     <Container className="mt-4">
       <h1>{props.greeting}</h1>
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "10px",
+          height: "180px",
+        }}
+      >
         <ItemList items={items} />
       </div>
-      <ItemCount />
     </Container>
   );
 };
