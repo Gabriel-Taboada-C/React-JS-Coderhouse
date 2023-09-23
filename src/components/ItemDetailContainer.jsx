@@ -1,27 +1,28 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Container from "react-bootstrap/Container";
-import data from "../data/items.json";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { ItemDetail } from "./ItemDetail";
-import { ItemCount } from "./ItemCount";
 
 export const ItemDetailContainer = (props) => {
   const [item, setItem] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const { id } = useParams();
 
   useEffect(() => {
-    const promise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        const itemById = data.find((item) => item.id === id);
-        resolve(itemById);
-      }, 2000);
-    });
+    const db = getFirestore();
 
-    promise.then((data) => setItem(data));
-  }, []);
+    const refDoc = doc(db, "catalogo", id);
 
-  if (!item) return <div>Cargando...</div>;
+    getDoc(refDoc)
+      .then((snapshot) => {
+        setItem({ id: snapshot.id, ...snapshot.data() });
+      })
+      .finally(() => setLoading(false));
+  }, [id]);
+
+  if (loading) return <div>Cargando...</div>;
 
   return (
     <Container className="mt-4">
@@ -30,5 +31,3 @@ export const ItemDetailContainer = (props) => {
     </Container>
   );
 };
-
-/* No logro que funcione ItemDetail, si lo llamo no me trae ningun valor */

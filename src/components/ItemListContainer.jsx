@@ -1,30 +1,46 @@
 import { useState, useEffect } from "react";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 import { useParams } from "react-router-dom";
 import Container from "react-bootstrap/Container";
-import data from "../data/items.json";
 import { ItemList } from "./ItemList";
 
 export const ItemListContainer = (props) => {
   const [items, setItems] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const { id } = useParams();
 
   useEffect(() => {
-    const promise = new Promise((resolve, reject) => {
-      setTimeout(() => resolve(data), 2000);
-    });
+    const db = getFirestore();
 
-    promise.then((data) => {
-      if (!id) {
-        setItems(data);
-      } else {
-        const itemsFiltered = data.filter((item) => item.category === id);
-        setItems(itemsFiltered);
-      }
-    });
-  }, []);
+    const refCollection = id
+      ? query(collection(db, "catalogo"), where("categoryId", "==", id))
+      : collection(db, "catalogo");
 
-  if (!items) return <div>Cargando productos...</div>;
+    getDocs(refCollection)
+      .then((snapshot) => {
+        if (snapshot.size === 0) setItems([]);
+        else {
+          setItems(
+            snapshot.docs.map((doc) => ({
+              id: doc.id,
+              ...doc.data(),
+            }))
+          );
+        }
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [id]);
+
+  if (loading) return <div>Cargando productos...</div>;
 
   return (
     <Container className="mt-4">
