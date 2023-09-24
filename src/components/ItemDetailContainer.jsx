@@ -25,9 +25,11 @@ export const ItemDetailContainer = (props) => {
   if (loading) return <div>Cargando...</div>;
 
   return (
-    <Container className="mt-4">
-      <h1>Detalles del Producto</h1>
-      <ItemDetail item={item} />
-    </Container>
+    <>
+      <Container className="mt-4">
+        <h1>Detalles del Producto</h1>
+        <ItemDetail item={item} />
+      </Container>
+    </>
   );
 };

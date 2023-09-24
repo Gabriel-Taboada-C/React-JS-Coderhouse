@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../contexts/CartContext";
-import { Container, Table, Form } from "react-bootstrap";
+import { Container, Table, Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import {
   getFirestore,
   collection,
@@ -72,7 +73,7 @@ export const Cart = () => {
           <tbody>
             {items.map((item) => (
               <tr key={item.id}>
-                <td>{item.name}</td>
+                <td>{item.title}</td>
                 <td>{item.price}</td>
                 <td>{item.quantity}</td>
                 <td>
@@ -80,6 +81,7 @@ export const Cart = () => {
                     Quitar Producto
                   </button>
                 </td>
+                <td></td>
               </tr>
             ))}
           </tbody>
@@ -93,6 +95,19 @@ export const Cart = () => {
             </tr>
           </tfoot>
         </Table>
+        <div
+          style={{
+            display: "flex",
+            gap: "10px",
+          }}
+        >
+          <Link as={Link} to="/">
+            <Button variant="secondary">Ir a Comprar</Button>
+          </Link>
+          <Button variant="secondary" onClick={() => clear()}>
+            Vaciar Carrito
+          </Button>
+        </div>
         <h2>Ingresar datos del usuario</h2>
         <Form>
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -125,7 +140,9 @@ export const Cart = () => {
             />
           </Form.Group>
         </Form>
-        <button onClick={sendOrder}>Terminar mi compra</button>
+        <Button variant="secondary" onClick={sendOrder}>
+          Terminar mi compra
+        </Button>
       </Container>
     </>
   );

@@ -19,9 +19,9 @@ export const ItemDetail = ({ item }) => {
             alignItems: "center",
           }}
         >
-          <h2>{item.name}</h2>
+          <h2>{item.title}</h2>
           <img
-            src={item.img}
+            src={item.pictureUrl}
             style={{ width: "300px", height: "auto" }}
             alt=""
           />
